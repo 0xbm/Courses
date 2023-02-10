@@ -1,0 +1,26 @@
+#+title: Cheatsheet_html
+
+*   HEAD
+** W części head podajemy informacje dotyczące dokumenty, jak tytuł, autora i, co bardzo ważne, kodowanie znaków. Ustawienia strony trafiają do sekcji wyznaczonej przez element <head>.
+html head title link
+
+*   BODY
+**  Treść strony internetowej, czyli wszystko to co zostanie wyświetlone na ekranie musi znaleźć się w elemencie <body> (ang. ciało strony, dokumentu).
+header - do grupowania naglowka (jesli uzywamy section to uzywajmy rowwniez header)
+img - do zdjec
+p - akapit
+a href= - do linkow
+b - pogrubienie tekstu
+h1 - wielkosc tekstu
+ul - tworzy liste punktow <li>
+li - tworzy liste zaczynajaca sie od kropki
+hr - pozioma linia
+span - zdanie ktore sie specjalnie nie wyroznia
+section - okreslanie sekcji (dzielnie tekstu na sekcje)
+main - sluzy do zonaczenie glownej sekcji strony
+address - dane kontakowe
+div - tag po ktorym tekst przeskakuje do nastepnej linii (przez display-block)
+
+klasy wpisujemy class="color", a w css dostepn do klasy mamy przez wpisanie .color
+
+konczymy tagiem </html>
