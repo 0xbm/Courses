@@ -1,0 +1,140 @@
+* PROGRAMOWANIE FUNKCYJNE
+
+** OPERATORY MATEMATYCZNE
++
+-
+/
+//
+*mnozenie
+
+** OPERATORY LOGICZNE
+and
+or
+not
+
+** METODY
+metoda w liscie jest np. append,remove
+
+** ITERACJA
+iteracje mozna zrobic przez kolekcje w liscie
+
+** ARGUMENTY Z KOLEKCJI
+rodzina = ['ja', 'ty']  - ja, ty to argumenty,elementy
+
+** PETLE
+petla while musi posiadac warunek
+petla for jest obiektowa czyli moze iterowac TYLKO po obiektach, kolekcjach np. ['ja', 'ty']
+
+** ZMIENNA INKREMENTACYJNA
+i += 1
+
+** OMOWIENIE
+lista = [1,2,3,"ja", "ty"] -> jest to lista wypelniona typami intiger oraz string
+
+** FUNKCJA
+range(0,10,2) -> funkcja range z 3 przeciazeniami
+def funkcja_test(): -> funkcja_test bez argumentow
+    print("FUNKCJA") -> cialo funkcji
+funckja_test() ->wywolywanie funkcji
+funkcje mozna reprodukowac ile razy sie chce
+mozna podawac wiecej argumentow do funkcji niz 1
+def funkcja_test(x,y=1): -> funkcja z argumentem domyslnym,ktory ZAWSZE MUSI byc na koncu
+instrukcja skoku -> break continue return
+po slowku return NIE MOZNA umieszczac lini kodu poniewaz sie nie wyswietli
+return umieszczamy zawsze na koncu
+rekurencja - wywolywanie funkcji w funkcji
+
+operator kontakencji to jest plus np w princie
+print("Mam lat: " + int(input("wpisz wiek: ")))
+
+** SLOWNIK
+w slowniku mamy pare wartosci czyli KLUCZ:WARTOŚĆ
+
+** FUNKCJE ANONIMOWE
+lambda expresion
+lambda to funckja bez nazwy
+
+** MAP
+funckja map przperowadza badanie na kazdym elemencie z kolekcji
+
+** FILTER
+funckja filter przperowadza badanie na elemencie z kolekcji, ktory jest TRUE lub FALSE
+
+** GENERATORY - yield
+generuje wyniki na biezaco i kontynuuje dzialanie petli nie przerywa jej  jesli wystepuje instrukcja skoku czyli RETURN
+slowo yield wykonuje sie wiecej razy niz return(ktore wykonuje sie raz-jak funkcja trafi na return to przenosi sie od razu na koniec- konczy dzialanie funkcji)
+tworzac generator mozna otrzymac wyniki poprzed pokaznie ich w liscie np:print(list(gen()) lub przez iteracje petla obiektowa for
+
+** DEKORATOR
+musi posiadac conajmniej jeden argument i wewnatrz takiego dokratora powinna sie znajdowac jedna funkcja
+*** *args
+argumenty, ktory moze byc jakikolwiek w funkcji
+*** **kwargs
+key word arguments - argument funkcji zawierajacy key and value czyli slownik
+** ZBIOR - set
+zbior ma takie wiekszosc takich samych wlasciwosci jak lista ale nie powtarzaja sie takie same dwie wartosci
+jesli wystapia dwie takie same wartosci to jedna z nich bedzie ignorowana
+  
+* PROGRAMOWANIE OBIEKTOWE
+
+** KLASY I OBIEKTY
+klasy zaczynamy od wielkiej litery w odroznieniu do nazwy funkcji
+klasy moga zaweirac w sobie funkcje, zmienne
+klasy sa abstrakcyjne(ogolne) np czlowiek - nie wiemy konretnie o jakiego czlowieka z jakimi cechami chodzi
+natomiast mowiac o obiekcie wiemy juz o kogo chodzi
+!metoda (class Czlowiek: def przedstaw(self): nie nalezy do klasy w ktorej sie znajduje TYLKO do obiektu , ktory bedzie nadany -> obj=Czlowiek() obj.przedstaw()) PATRZ TEZ => metoda klasy
+
+** DZIEDZICZENIE
+klasa glowna np.
+class Animal:
+     def voice(self):
+        print("HAU HAU")
+
+klasa dziedziczona w klasie Dog
+class Dog(Animal):
+    super().voice()*
+
+**  METODY MAGICZNE
+    kazda metoda magiczna zaczyna sie od podwojnego podkreslenia np __init__
+
+** KONSTRUKTOR
+    np __init__ ,ktora inicjalizuje nam jakies dane
+
+**  DESTRUKTOR
+    przeciwienstwo konstruktora
+    !dziala w koncu 'zycia' obiektu
+    obiekt sie konczy kiedy zadna zmienna nie jest przypisana do obiektu (klasy, w ktorej jest funckja __del__)
+
+**  HERMETYZACJA
+    całkowitego ukrycia np. listy nie ma, mozna jedynie osłonic obiekt (liste) znajdujaca sie w ciele klasy
+    aby obiekt byl prywatny/niewidoczny to trzeba dodac przed nazwa podkreslnik np. _lista lub dwa podkreslniki np. __lista
+    aby odwolac sie do obiektu ukrytego przez dwa podkresliniki trzeba dodac klase w nazwie obiektu np.
+        obj = Test()
+        obj._Test.__lista.append("X") # mamy dostep do listy do ktorej nie powinnismy          miec dostepu
+
+**  METODA KLASY
+    @classmethod
+    w metodzie klasy musi byc pierwszy argument 'cls', zamiast self
+    metoda klasy mozemy wywolac bez obiektu, odwolujac sie tylko do klasy
+
+** METODA STATYCZNA
+    @staticmethod
+    ma takie samo zastosowanie co metoda klasy z ta roznica, ze zamiast argumentu 'cls' jest wlasnorecznie nadany argument
+
+*   WYRAZENIA REGULARNE
+
+**  MATCH
+funkcja match domyslnie sprawdza czy dany tekst rozpoczyna sie od danego wzoru
+mozna otagowac szukane slowo banan takim wzorem:
+    r".*" + wzor + r".*"
+i w ten sposb zostanie znalezione szukane slowo mimo ze bedzie w srodku ciagu znakow
+
+symbol ^ czyli poczatek zapytania, neguje to co za nim jest czyli klasa znakow ze znakiego potegowania [^A-Z] oznacza, ze duze litery od A do Z nie moge znajdowac sie w szukanym wyrazeniu(patrz lekcja 32) lub oznacza poczatek szukanego wyrazenia ^[a-z]
+symbol $ oznacza koniec zapytania
+symbol * nie dopuszcza zeby pojawil sie znak przed * (patrz lekcja 34)
+symbol + nakazuje aby dana klasa znakow lub znak pojawil sie conajmniej jeden raz (patrz lekcja 34)
+symbol ? wskazuje ze dany znak moze pojawic sie TYLKO 1 raz lub w ogole (patrz lekcja 34)
+nawiasy {1,5} okreslaja ile razy moze wystapoewac ostatni znaku (patrz lekcja 34)
+
+**  SEARCH
+szuka slowa ze wzoru w ciagu znakow (krotsza metoda niz match)
